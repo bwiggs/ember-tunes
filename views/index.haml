@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Ember Tunes
+    
+  %body
+    %h1 Ember Tunes
+    %script{:type=>"text/x-handlebars", :'data-template-name' => 'playlists'}
+      :plain
+        <div>
+          <h2>Playlists</h2>
+          {{#if playlists}}
+          <ul id="Playlists">
+            {{#each playlists}}
+              <li>{{title}} - {{artist}}</li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <p>No Playlists</p>
+          {{/if}}
+        </div>
+    %script{ :src => '/js/libs/jquery-1.7.2.min.js' }
+    %script{ :src => '/js/libs/ember-0.9.8.1.js' }
+    %script{ :src => '/js/app/App.js' }
